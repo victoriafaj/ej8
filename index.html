@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista Ordenada de Días</title>
+</head>
+<body>
+    <button id="crearListaBtn">Crear Lista Ordenada</button>
+    <div id="listaContainer"></div>
+
+    <script>
+        const dias = ['lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
+        const crearListaBtn = document.getElementById('crearListaBtn');
+        const listaContainer = document.getElementById('listaContainer');
+
+        crearListaBtn.addEventListener('click', () => {
+            const listaOrdenada = document.createElement('ol');
+            
+            for (const dia of dias) {
+                const item = document.createElement('li');
+                item.textContent = dia;
+                listaOrdenada.appendChild(item);
+            }
+
+            listaContainer.innerHTML = ''; // Limpiamos el contenedor antes de añadir la lista
+            listaContainer.appendChild(listaOrdenada);
+        });
+    </script>
+</body>
+</html>
